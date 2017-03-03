@@ -1,0 +1,612 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://livevalidation.com/documentation -->
+<HTML lang=en xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>LiveValidation - Documentation</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=description 
+content="A javascript library for all your client-side and form validation needs.">
+<META name=keywords 
+content="javascript, form, forms, validation, library, web2.0, ajax"><!-- yahoo user interface css 
+      (reset - resets all defaults to be pretty much identical cross browser)
+      (fonts - standardises default fonts styles crosss browser)
+      (grids - provides cross browser positional styles for creating layouts) 
+      see http://developer.yahoo.com/yui/grids/ --><LINK 
+rel=stylesheet type=text/css 
+href="LiveValidation%20-%20Documentation_files/reset-fonts-grids.css"><LINK 
+rel=stylesheet type=text/css 
+href="LiveValidation%20-%20Documentation_files/consolidated_common.css"><!--[if IE]>
+<STYLE type=text/css>#main LI {
+	WIDTH: auto
+}
+FIELDSET {
+	POSITION: relative; MARGIN: 2em 0px 1em
+}
+LEGEND {
+	POSITION: absolute; TOP: -0.5em; LEFT: 0.2em
+}
+</STYLE>
+<![endif]--><!--[if IE 6]>
+    <style type="text/css">
+      #doc {
+		 width:58em;
+	  }
+		
+		#main .supportBox {
+			margin-left:40px;
+		}
+	</style>
+  <![endif]-->
+<SCRIPT type=text/javascript 
+src="LiveValidation%20-%20Documentation_files/livevalidation_standalone.compressed.js"></SCRIPT>
+
+<META name=GENERATOR content="MSHTML 8.00.6001.19190"></HEAD>
+<BODY id=top>
+<DIV id=bg>
+<DIV id=doc>
+<DIV id=hd>
+<H1><A title=home href="http://livevalidation.com/">LiveValidation</A></H1>
+<H2>Validation as you type!</H2>
+<UL id=head_nav>
+  <LI><A title=download 
+  href="http://livevalidation.com/download">download</A></LI>
+  <LI><A title=documentation 
+  href="http://livevalidation.com/documentation">documentation</A></LI>
+  <LI><A title=examples 
+  href="http://livevalidation.com/examples">examples</A></LI></UL></DIV>
+<DIV id=topMain></DIV>
+<DIV id=main>
+<DIV class=container_with_padding>
+<H2>Documentation...</H2>
+<P>This documentation is only concerned with the code you will actually need to 
+know, all methods used internally are omitted, but they are all documented in 
+the source code.</P>
+<H4>Contents</H4>
+<UL>
+  <LI><STRONG><A title="Validate (class)" 
+  href="http://livevalidation.com/documentation#Validate">Validate 
+  (class)</A></STRONG> 
+  <UL>
+    <LI><A title="Presence (static function)" 
+    href="http://livevalidation.com/documentation#ValidatePresence">Presence 
+    (static function)</A></LI>
+    <LI><A title="Format (static function)" 
+    href="http://livevalidation.com/documentation#ValidateFormat">Format (static 
+    function)</A></LI>
+    <LI><A title="Numericality (static function)" 
+    href="http://livevalidation.com/documentation#ValidateNumericality">Numericality 
+    (static function)</A></LI>
+    <LI><A title="Length (static function)" 
+    href="http://livevalidation.com/documentation#ValidateLength">Length (static 
+    function)</A></LI>
+    <LI><A title="Inclusion (static function)" 
+    href="http://livevalidation.com/documentation#ValidateInclusion">Inclusion 
+    (static function)</A></LI>
+    <LI><A title="Exclusion (static function)" 
+    href="http://livevalidation.com/documentation#ValidateExclusion">Exclusion(static 
+    function)</A></LI>
+    <LI><A title="Acceptance (static function)" 
+    href="http://livevalidation.com/documentation#ValidateAcceptance">Acceptance 
+    (static function)</A></LI>
+    <LI><A title="Confirmation (static function)" 
+    href="http://livevalidation.com/documentation#ValidateConfirmation">Confirmation 
+    (static function)</A></LI>
+    <LI><A title="Validate.Email (static function)" 
+    href="http://livevalidation.com/documentation#ValidateEmail">Email (static 
+    function)</A></LI>
+    <LI><A title="Validate.Custom (static function)" 
+    href="http://livevalidation.com/documentation#ValidateCustom">Custom (static 
+    function)</A></LI>
+    <LI><A title="Validate.now (static function)" 
+    href="http://livevalidation.com/documentation#ValidateNow">now (static 
+    function)</A></LI></UL></LI>
+  <LI><STRONG><A title="LiveValidation (class)" 
+  href="http://livevalidation.com/documentation#LiveValidation">LiveValidation 
+  (class)</A></STRONG> 
+  <UL>
+    <LI><A title=constructor 
+    href="http://livevalidation.com/documentation#LiveValidationConstructor">constructor</A></LI>
+    <LI><A title="add (function)" 
+    href="http://livevalidation.com/documentation#LiveValidationAdd">add 
+    (function)</A></LI>
+    <LI><A title="remove (function)" 
+    href="http://livevalidation.com/documentation#LiveValidationRemove">remove 
+    (function)</A></LI>
+    <LI><A title="disable (function)" 
+    href="http://livevalidation.com/documentation#LiveValidationDisable">disable 
+    (function)</A></LI>
+    <LI><A title="enable (function)" 
+    href="http://livevalidation.com/documentation#LiveValidationEnable">enable 
+    (function)</A></LI>
+    <LI><A title="destroy (function)" 
+    href="http://livevalidation.com/documentation#LiveValidationDestroy">destroy 
+    (function)</A></LI>
+    <LI><A title="massValidate (static function)" 
+    href="http://livevalidation.com/documentation#LiveValidationMassValidate">massValidate 
+    (static function)</A></LI></UL></LI>
+  <LI><STRONG><A title="LiveValidationForm (class)" 
+  href="http://livevalidation.com/documentation#LiveValidationForm">LiveValidationForm 
+  (class)</A></STRONG> 
+  <UL>
+    <LI><A title="destroy (function)" 
+    href="http://livevalidation.com/documentation#LiveValidationFormDestroy">destroy 
+    (function)</A></LI></UL></LI></UL><BR>
+<DIV id=documentation>
+<DIV id=introValidate>
+<H2 id=Validate>Validate (class) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H2>
+<P>The Validate class contains a number of static methods which are used to 
+perform various types of validation. These are separated out from the 
+LiveValidation class so they can be used in any context in your javascript, not 
+just while validating form fields.</P>
+<P>When you add a validation to a LiveValidation object, it is one of these 
+validation types that you refer to, so familiarise yourself with them. If you 
+are already familiar with Ruby on Rails validation, then they will be easy to 
+remember, as they use a similar naming convention, and similar parameters 
+(although some parameter’s names are different due to javascript keyword 
+conflicts).</P>
+<P>If used separately from a LiveValidation, and a validation fails, a custom 
+error is thrown which stores the failure message, so you will need to handle 
+this yourself if you wish to use the message. If you just want a simple true or 
+false, and don't need to extract the failure message, you can use the 
+Validate.now method to perform the validation.</P></DIV>
+<DIV id=ValidatePresence class=section>
+<H3>Presence (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates that a value is present (ie. not null, undefined, or an empty 
+string)</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> (optional) - {Object} - object containing 
+parameters to be used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>failureMessage</STRONG> (optional) - {String} - message to be used 
+upon validation failure <EM>(DEFAULT: “Can’t be empty!”)</EM> </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>Validate.Presence( 'hello world', { failureMessage: "Supply a value!" } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateFormat class=section>
+<H3>Format (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates a value against a regular expression</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> - {Object} - object containing parameters to be 
+used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>failureMessage</STRONG> (optional) - {String} - message to be used 
+upon validation failure <EM>(DEFAULT: “Not valid!”)</EM> 
+<BR><STRONG>pattern</STRONG> - {RegExp} - regular expression to validate against 
+<EM>(DEFAULT: /./i)</EM> <BR><STRONG>negate</STRONG> - {Boolean} - if true will 
+be valid if the value DOES NOT match the regular expression <EM>(DEFAULT: 
+false)</EM> </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>// check that 'validation' exists in the string, case insensitive...
+Validate.Format( 'live validation', { pattern: /validation/i, failureMessage: "Failed!" } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateNumericality class=section>
+<H3>Numericality (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates that the value is numeric and: is an integer, is a specific number, 
+is more than a minimum number, less than a maximum number, is within a range of 
+numbers, or a combination of these</P>
+<P><STRONG>NB</STRONG> - numbers expressed in scientific form (ie 2e3, being 
+2000) are handled correctly, as are negative numbers, and floats.</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> (optional) - {Object} - object containing 
+parameters to be used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>notANumberMessage</STRONG> (optional) - {String} - message to be used 
+when validation fails because value is not a number <EM>(DEFAULT: “Must be a 
+number!”)</EM> <BR><STRONG>notAnIntegerMessage</STRONG> (optional) - {String} - 
+message to be used when validation fails because value is not an integer 
+<EM>(DEFAULT: “Must be an integer!”)</EM> 
+<BR><STRONG>wrongNumberMessage</STRONG> (optional) - {String} - message to be 
+used when validation fails when ‘is’ param is used <EM>(DEFAULT: “Must be 
+{is}!”)</EM> <BR><STRONG>tooLowMessage</STRONG> (optional) - {String} - message 
+to be used when validation fails when ‘minimum’} param is used <EM>(DEFAULT: 
+“Must not be less than {minimum}!”)</EM> <BR><STRONG>tooHighMessage</STRONG> 
+(optional) - {String} - message to be used when validation fails when ‘maximum’} 
+param is used <EM>(DEFAULT: “Must not be more than {maximum}!”)</EM> 
+<BR><STRONG>is</STRONG> (optional) - {mixed} - the value must be equal to this 
+numeric value <BR><STRONG>minimum</STRONG> (optional) - {mixed} - the minimum 
+numeric allowed <BR><STRONG>maximum</STRONG> (optional) - {mixed} - the maximum 
+numeric allowed <BR><STRONG>onlyInteger</STRONG> (optional) - {Boolean} - if 
+true will only allow integers to be valid <EM>(DEFAULT: false)</EM> </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>// check that value is an integer between -5 and 2000 exists in the string, case insensitive...
+Validate.Numericality( 2e3, { minimum: -5, maximum: 2000 } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateLength class=section>
+<H3>Length (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates the length of a value is a particular length, is more than a 
+minimum, less than a maximum, or between a range of lengths</P>
+<P><STRONG>NB</STRONG> - to check if it is within a range, specify both a 
+minimum and a maximum</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> - {Object} - object containing parameters to be 
+used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>wrongLengthMessage</STRONG> (optional) - {String} - message to be 
+used when validation fails when ‘is’ param is used <EM>(DEFAULT: “Must be {is} 
+characters long!”)</EM> <BR><STRONG>tooShortMessage</STRONG> (optional) - 
+{String} - message to be used when validation fails when ‘minimum’} param is 
+used <EM>(DEFAULT: “Must not be less than {minimum} characters long!”)</EM> 
+<BR><STRONG>tooLongMessage</STRONG> (optional) - {String} - message to be used 
+when validation fails when ‘maximum’} param is used <EM>(DEFAULT: “Must not be 
+more than {maximum} characters long!”)</EM> <BR><STRONG>is</STRONG> (optional) - 
+{mixed} - the value must be this length <BR><STRONG>minimum</STRONG> (optional) 
+- {mixed} - the minimum length allowed <BR><STRONG>maximum</STRONG> (optional) - 
+{mixed} - the maximum length allowed </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>// check that value is between 3 and 255 characters long...
+Validate.Length( 'cow', { minimum: 3, maximum: 255 } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateInclusion class=section>
+<H3>Inclusion (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates that a value falls within a given set of values</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> - {Object} - object containing parameters to be 
+used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>failureMessage</STRONG> (optional) - {String} - message to be used 
+upon validation failure <EM>(DEFAULT: “Must be included in the list!”)</EM> 
+<BR><STRONG>within</STRONG> - {Array} - an array of values that the value should 
+fall in <EM>(DEFAULT: Empty array)</EM> <BR><STRONG>allowNull</STRONG> 
+(optional) - {Boolean} - if true, and a null value is passed in, validates as 
+true <EM>(DEFAULT: false)</EM> <BR><STRONG>partialMatch</STRONG> (optional) - 
+{Boolean}- if true, will not only validate against the whole value to check, but 
+also if it is a substring of the value <EM>(DEFAULT: false)</EM> 
+<BR><STRONG>caseSensitive</STRONG> (optional) - {Boolean} - if false will 
+compare strings case insensitively<EM>(DEFAULT: true)</EM> </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>Validate.Inclusion( 'cat', { within: [ 'cow', 277, 'catdog' ], allowNull: true, partialMatch: true, caseSensitive: false } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateExclusion class=section>
+<H3>Exclusion (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates that a value does not fall within a given set of values</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> - {Object} - object containing parameters to be 
+used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>failureMessage</STRONG> (optional) - {String} - message to be used 
+upon validation failure <EM>(DEFAULT: “Must not be included in the list!”)</EM> 
+<BR><STRONG>within</STRONG> - {Array} - an array of values that the given value 
+should not fall in <EM>(DEFAULT: Empty array)</EM> 
+<BR><STRONG>allowNull</STRONG> (optional) - {Boolean} - if true, and a null 
+value is passed in, validates as true <EM>(DEFAULT: false)</EM> 
+<BR><STRONG>partialMatch</STRONG> (optional) - {Boolean} - if true, will not 
+only validate against the whole value to check, but also if it is a substring of 
+the value <EM>(DEFAULT: false)</EM> <BR><STRONG>caseSensitive</STRONG> 
+(optional) - {Boolean} - if false will compare strings case 
+insensitively<EM>(DEFAULT: true)</EM> </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>Validate.Exclusion( 'pig', { within: [ 'cow', 277, 'catdog' ], allowNull: true, partialMatch: true, caseSensitive: false } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateAcceptance class=section>
+<H3>Acceptance (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates that a value equates to true (for use primarily in detemining if a 
+checkbox has been checked)</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> (optional) - {Object} - object containing 
+parameters to be used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>failureMessage</STRONG> (optional) - {String} - message to be used 
+upon validation failure <EM>(DEFAULT: “Must be accepted!”)</EM> </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>Validate.Acceptance( true, { failureMessage: "You must be true!" } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateConfirmation class=section>
+<H3>Confirmation (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates that a value matches that of a given form field</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> - {Object} - object containing parameters to be 
+used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>failureMessage</STRONG> (optional) - {String} - message to be used 
+upon validation failure <EM>(DEFAULT: “Does not match!”)</EM> 
+<BR><STRONG>match</STRONG> -{mixed} - a reference to, or string id of the field 
+that this should match </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>Validate.Confirmation( 'open sesame', { match: 'myPasswordField', failureMessage: "Your passwords don't match!" } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateEmail class=section>
+<H3>Email (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates a value is a valid email address</P>
+<P>This is an example of a custom validation method. This one is essentially 
+just a Format validation, but one that is used often enough to merit its own 
+method so that you don’t need to keep remembering the same crazy regular 
+expression and failure message. You may want to mimic this to create your own 
+re-useable validations, such as phone numbers, postcodes etc.</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> - {Object} - object containing parameters to be 
+used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>failureMessage</STRONG> (optional) - {String} - message to be used 
+upon validation failure <EM>(DEFAULT: “Must be a valid email address!”)</EM> 
+</P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>Validate.Email( 'live@validation.com', { failureMessage: "I am an overridden message!" } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateCustom class=section>
+<H3>Custom (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates a value against a custom function that returns true when valid or 
+false when not valid.</P>
+<P>You can use this to easily wrap any special validations that are not covered 
+by the core ones, in a way that the LiveValidation class can use to give the 
+feedback, without having to worry about the details.</P>
+<H4>Arguments:</H4>
+<P><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>paramsObj</STRONG> - {Object} - object containing parameters to be 
+used for the validation </P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>against</STRONG> - {Function} - a function that will take the value 
+and an object of arguments and return true or false<EM>(DEFAULT: function( 
+value, args ){ return true; } )</EM> <BR><STRONG>args</STRONG> - {Object} - an 
+object of named arguments that will be passed to the custom function so are 
+accessible through this object <EM>(DEFAULT: Empty object)</EM> 
+<BR><STRONG>failureMessage</STRONG> (optional) - {String} - message to be used 
+upon validation failure <EM>(DEFAULT: “Not valid!”)</EM> </P>
+<H4>Returns:</H4>
+<P>true if valid or throws a Validate.Error object containing the failure 
+message</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>// Pass a function that checks if a number is divisible by one that you pass it in args object
+// In this case, 5 is passed, so should return true and validation will pass
+Validate.Custom( 55, { against: function(value,args){ return !(value % args.divisibleBy) }, args: {divisibleBy: 5} } );</CODE></PRE><BR></DIV>
+<DIV id=ValidateNow class=section>
+<H3>now (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates a passed in value using the passed in validation function, and 
+handles the validation error for you so it gives a nice true or false reply</P>
+<H4>Arguments:</H4>
+<P><STRONG>validationFunction</STRONG> - {Function} - reference to the 
+validation function to be used (ie Validate.Presence ) 
+<BR><STRONG>value</STRONG> - {mixed} - value to be checked 
+<BR><STRONG>validationParamsObj</STRONG> - {Object} - object containing 
+parameters to be used for the validation (optional depends upon the validation 
+function) </P>
+<H4>Returns:</H4>
+<P>true if valid or false if not valid</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>Validate.now( Validate.Numericality, '2007', { is: 2007 } );</CODE></PRE><BR></DIV>
+<DIV id=introLiveValidation>
+<H2 id=LiveValidation>LiveValidation (class)</H2>
+<P>The LiveValidation class sets up a text, checkbox, file, or password input, 
+or a textarea to allow its value to be validated in real-time based upon the 
+validations you assign to it.</P></DIV>
+<DIV id=LiveValidationConstructor class=section>
+<H3>constructor <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>The constructor of the LiveValidation class to set up the form field as a 
+LiveValidation object allows you to pass in any parameters you want to 
+override.</P>
+<H4>Arguments:</H4>
+<P><STRONG>element</STRONG> - {mixed} - either a dom element reference or the 
+string id of the element to validate <BR><STRONG>optionsObj</STRONG> (optional) 
+- {Object} - object containing options to override the LiveValidation defaults 
+</P>
+<H4>Parameters for paramsObj:</H4>
+<P><STRONG>validMessage</STRONG> (optional) - {String} - message to be used upon 
+successful validation <EM>(DEFAULT: 
+“Thankyou!”)</EM><BR><STRONG>onValid</STRONG> (optional) - {Function} - function 
+to execute when field passes validation <EM>(DEFAULT: function(){ 
+this.insertMessage( this.createMessageSpan() ); this.addFieldClass(); } 
+)</EM><BR><STRONG>onInvalid</STRONG> (optional) - {Function} - function to 
+execute when field fails validation <EM>(DEFAULT: function(){ 
+this.insertMessage( this.createMessageSpan() ); this.addFieldClass(); 
+})</EM><BR><STRONG>insertAfterWhatNode</STRONG> (optional) - {mixed} - reference 
+or id of node to have the message inserted after <EM>(DEFAULT: the field that is 
+being validated)</EM><BR><STRONG>onlyOnBlur</STRONG> (optional) - {Boolean} - 
+whether you want it to validate as you type or only on blur <EM>(DEFAULT: 
+false)</EM><BR><STRONG>wait</STRONG> (optional) - {Integer} - the time you want 
+it to pause from the last keystroke before it validates (milliseconds) 
+<EM>(DEFAULT: 0)</EM><BR><STRONG>onlyOnSubmit</STRONG> (optional) - {Boolean} - 
+if it is part of a form, whether you want it to validate it only when the form 
+is submitted <EM>(DEFAULT: false)</EM> </P>
+<H4>Returns:</H4>
+<P>The LiveValidation object itself so that calls can be chained</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>var myField = new LiveValidation('myField', { validMessage: "I am valid!", onlyOnBlur: true });</CODE></PRE><BR></DIV>
+<DIV id=LiveValidationAdd class=section>
+<H3>add (function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Validates a passed in value using the passed in validation function, and 
+handles the validation error for you so it gives a nice true or false reply.</P>
+<H4>Arguments:</H4>
+<P><STRONG>validationFunction</STRONG> - {Function} - reference to the 
+validation function to be used (ie Validate.Presence ) 
+<BR><STRONG>validationParamsObj</STRONG> - {Object} - object containing 
+parameters to be used for the validation (optional depends upon the validation 
+function) </P>
+<H4>Returns:</H4>
+<P>The LiveValidation object itself so that calls can be chained</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>var myField = new LiveValidation('myField', { validMessage: "I am valid!" });
+myField.add(Validate.Format, { pattern: /^hello$/i });</CODE></PRE><BR></DIV>
+<DIV id=LiveValidationRemove class=section>
+<H3>remove (function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Removes a specific validation from the stack of validations that have been 
+added</P>
+<P><STRONG>Note</STRONG> - you must pass it EXACTLY the same arguments as you 
+used to add the validation</P>
+<P>This is useful when writing custom code that alters validations based on 
+whatever else may be happening on your webpage</P>
+<H4>Arguments:</H4>
+<P><STRONG>validationFunction</STRONG> - {Function} - reference to the 
+validation function being used (ie Validate.Presence ) 
+<BR><STRONG>validationParamsObj</STRONG> - {Object} - object containing 
+parameters beeing used for the validation (optional depends upon whether used 
+when the validation was added) </P>
+<H4>Returns:</H4>
+<P>The LiveValidation object itself so that calls can be chained</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>var myField = new LiveValidation('myField');
+// add a Format and Length validation
+myField.add(Validate.Format, { minimum: /^woohoo+$/ }).add(Validate.Length, {maximum: 20});
+// now remove only the Format validation 
+myField.remove(Validate.Format, { minimum: /^woohoo+$/ });</CODE></PRE><BR></DIV>
+<DIV id=LiveValidationDisable class=section>
+<H3>disable (function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>A helper to disable a field, so that validations are not run on it, and its 
+value will not be posted if part of a form. It will also remove any previous 
+validation message and field class.</P>
+<P>This is useful for forms which can have different fields filled in depending 
+upon choices they are given.</P>
+<H4>Returns:</H4>
+<P>The LiveValidation object itself so that calls can be chained</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>var myField = new LiveValidation('myField');
+// disable the field - validations will not be run on this field, and its contents not submitted
+myfield.disable();</CODE></PRE><BR></DIV>
+<DIV id=LiveValidationEnable class=section>
+<H3>enable (function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>A helper to enable a disabled field.</P>
+<P>Will cause validations to be performed on the field again, after having been 
+previously disabled.</P>
+<H4>Returns:</H4>
+<P>The LiveValidation object itself so that calls can be chained</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>var myField = new LiveValidation('myField');
+// disable the field - validations will not be run on this field
+myfield.disable();
+// enable the field again - validations will now be run again
+myField.enable();</CODE></PRE><BR></DIV>
+<DIV id=LiveValidationDestroy class=section>
+<H3>destroy (function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Will unregister all events of the LiveValidation object (preserving 
+previously defined events) and remove it from any LiveValidationForm it might 
+belong to.</P>
+<P>This is useful if you don’t want a field to be a LiveValidation field any 
+longer, or need to redefine a field as a new LiveValidation object with 
+different parameters.</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>var myField = new LiveValidation('myField');
+myfield.destroy();</CODE></PRE><BR></DIV>
+<DIV id=LiveValidationMassValidate class=section>
+<H3>massValidate (static function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Pass an array of LiveValidation objects and it will validate all of them and 
+return whether they pass or fail as a group</P>
+<P><STRONG>Note</STRONG> - as of release 1.2 it is unlikely you will ever need 
+to use this function, as validation of all fields in a form on submission is now 
+handled automatically.</P>
+<H4>Arguments:</H4>
+<P><STRONG>validations</STRONG> - {Array} - an array of LiveValidation objects 
+</P>
+<H4>Returns:</H4>
+<P>true if all the validations pass, false if any fail</P>
+<H4>Example:</H4><PRE><CODE lang=javascript>// pass in an array of LiveValidation objects...
+var areAllValid = LiveValidation.massValidate( [ obj1, obj2 ] );</CODE></PRE><BR></DIV>
+<DIV id=introLiveValidationForm>
+<H2 id=LiveValidationForm>LiveValidationForm (class)</H2>
+<P>If a LiveValidation field belongs to a form, that form will be automatically 
+turned into a LiveValidationForm. This will handle making all LiveValidation 
+fields that are part of it run validations when the form is submitted, and stop 
+the form being sent if any are invalid.</P></DIV>
+<DIV id=LiveValidationFormDestroy class=section>
+<H3>destroy (function) <A class=gotoTop 
+href="http://livevalidation.com/documentation#top">Top</A></H3>
+<P>Will unregister all events of the LiveValidationForm object (preserving 
+previously defined events), but only if there are no more LiveValidation objects 
+belonging to it (unless forced to do so)</P>
+<P>It is probably rare that you will need to use this as it is done 
+automatically when LiveValidation objects are destroyed, but is useful for 
+tests.</P>
+<H4>Arguments:</H4>
+<P><STRONG>force</STRONG> - {Boolean} - whether to force the destruction even if 
+it has child LiveValidation objects </P>
+<H4>Example:</H4><PRE><CODE lang=javascript>var myField = new LiveValidation('myField');
+// access the LiveValidationForm object through one of its child LiveValidation objects form property
+myfield.form.destroy(true);</CODE></PRE><BR></DIV></DIV></DIV></DIV>
+<DIV id=bottomMain></DIV>
+<DIV id=ft>
+<UL id=foot_nav>
+  <LI><A title=home href="http://livevalidation.com/">home</A></LI>
+  <LI><A title=examples 
+  href="http://livevalidation.com/examples">examples</A></LI>
+  <LI><A title=documentation 
+  href="http://livevalidation.com/documentation">docs</A></LI>
+  <LI><A title=download 
+  href="http://livevalidation.com/download">download</A></LI>
+  <LI><A title=blog href="http://livevalidation.com/blog">blog</A></LI>
+  <LI><A title=support href="http://livevalidation.com/support">support</A></LI>
+  <LI><A title=contact href="http://livevalidation.com/contact">contact</A></LI>
+  <LI><A title=license 
+href="http://livevalidation.com/license">license</A></LI></UL><BR>
+<P>© 2007-2010 <A title="Link to Alec Hill’s site" 
+href="http://alec-hill.com/">Alec Hill</A> | MIT license</P>
+<P>
+<SCRIPT type=text/javascript>
+					var addthis_pub  = 'alechill2000';
+					var addthis_brand = 'LiveValidation';
+				</SCRIPT>
+<A id=addThis href="http://www.addthis.com/bookmark.php"><IMG 
+alt="Share / bookmark this page" 
+src="LiveValidation%20-%20Documentation_files/button1-share.gif" width=125 
+height=16> </A>
+<SCRIPT type=text/javascript>
+					var add_link = document.getElementById('addThis');
+					add_link.onmouseover = function(){
+						return addthis_open(this, '', '[URL]', '[TITLE]');
+					}
+					add_link.onmouseout = function(){
+						addthis_close();
+					}
+					add_link.onclick = function(){
+						return addthis_sendto();
+					}
+				</SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="LiveValidation%20-%20Documentation_files/addthis_widget.js"></SCRIPT>
+</P></DIV></DIV></DIV>
+<DIV id=megaFooter>
+<SCRIPT type=text/javascript>
+            google_ad_client = "pub-0577456741537280";
+            /* LiveValidation footer */
+            google_ad_slot = "8284128311";
+            google_ad_width = 728;
+            google_ad_height = 90;
+        </SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="LiveValidation%20-%20Documentation_files/show_ads.js"></SCRIPT>
+<BR>
+<FORM method=post action=https://www.paypal.com/cgi-bin/webscr><INPUT 
+value=_s-xclick type=hidden name=cmd> <INPUT class=donate 
+alt="Make payments with PayPal - it's fast, free and secure!" 
+src="LiveValidation%20-%20Documentation_files/x-click-but04.gif" type=image 
+name=submit> <IMG alt="" 
+src="LiveValidation%20-%20Documentation_files/pixel.gif" width=1 height=1> 
+<INPUT 
+value="-----BEGIN PKCS7-----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-----END PKCS7-----" 
+type=hidden name=encrypted> </FORM></DIV>
+<SCRIPT type=text/javascript>
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </SCRIPT>
+
+<SCRIPT type=text/javascript>
+      var pageTracker = _gat._getTracker("UA-2493379-1");
+	  pageTracker._setDomainName(".livevalidation.com");
+      pageTracker._trackPageview();
+  </SCRIPT>
+</BODY></HTML>

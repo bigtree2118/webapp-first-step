@@ -1,0 +1,139 @@
+/********************************* LiveValidation *************************************/
+
+.LV_valid {
+    color:#00CC00;
+}
+	
+.LV_invalid {
+	color:#CC0000;
+}
+	
+.LV_validation_message{
+    font-weight:bold;
+    margin:0 0 0 5px;
+}
+    
+.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover,  
+textarea.LV_valid_field:active,
+.fieldWithErrors input.LV_valid_field,
+.fieldWithErrors textarea.LV_valid_field {
+    border: 1px solid #00CC00;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active,
+.fieldWithErrors input.LV_invalid_field,
+.fieldWithErrors textarea.LV_invalid_field {
+    border: 1px solid #CC0000;
+}
+
+/************************************ HELPERS ***************************************/		
+
+.floatRight {
+  float:right;
+}
+
+.floatLeft {
+  float:left;
+}
+
+.clearBoth {
+  clear:both;
+}
+
+.clearLeft {
+  clear:left;
+}
+
+.clearRight {
+  clear:right;
+}
+
+.inline {
+  display:inline;
+}
+
+.block {
+  display:block;
+}
+
+.hidden {
+  display:none;
+}
+
+.invisible {
+  visibility:hidden;
+}
+
+.visible {
+  visibility:visible;
+}
+
+/** margin helpers (useful for floated images) **/
+
+.marginTop10 {
+  margin-top:10px;
+}
+
+.marginRight10 {
+  margin-right:10px;
+}
+
+.marginBottom10 {
+  margin-bottom:10px;
+}
+
+.marginleft10 {
+  margin-left:10px;
+}
+
+
+
+/* browsers */
+
+.firefox, .ie6, .ie7, .safari, .opera, .camino, .netscape, .konqueror {
+	text-indent: 20px;
+	background-color: #ffffff;
+	background-position: 0 2px;
+	background-repeat: no-repeat;
+}
+
+.firefox {
+	background-image: url(http://www.livevalidation.com/images/generic/browsers/firefox.gif);
+}
+
+.ie6 {
+	background-image: url(http://www.livevalidation.com/images/generic/browsers/ie.gif);
+}
+
+.ie7 {
+	background-image: url(http://www.livevalidation.com/images/generic/browsers/ie.gif);
+}
+
+.safari {
+	background-image: url(http://www.livevalidation.com/images/generic/browsers/safari.gif);
+}
+
+.opera {
+	background-image: url(http://www.livevalidation.com/images/generic/browsers/opera.gif);
+}
+
+.camino {
+	background-image: url(http://www.livevalidation.com/images/generic/browsers/camino.gif);
+}
+
+.netscape {
+	background-image: url(http://www.livevalidation.com/images/generic/browsers/netscape.gif);
+}
+
+.konqueror {
+	background-image: url(http://www.livevalidation.com/images/generic/browsers/konqueror.gif);
+}
+
+

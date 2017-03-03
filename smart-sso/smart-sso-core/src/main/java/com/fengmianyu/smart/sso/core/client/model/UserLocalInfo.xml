@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fengmianyu.smart.sso.core.client.dao.UserLocalInfoDao">
+	<resultMap id="BaseResultMap" type="com.fengmianyu.smart.sso.core.client.model.UserLocalInfo" >
+	    <result column="id" property="id" jdbcType="VARCHAR" />
+	    <result column="job_no" property="jobNo" jdbcType="VARCHAR" />
+	    <result column="account" property="account" jdbcType="VARCHAR" />
+	    <result column="org_id" property="orgId" jdbcType="INTEGER" />
+	    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+	    <result column="gender" property="gender" jdbcType="INTEGER" />
+	    <result column="email" property="email" jdbcType="VARCHAR" />
+	    <result column="cell_phone" property="cellPhone" jdbcType="VARCHAR" />
+	    <result column="address" property="address" jdbcType="VARCHAR" />
+	    <result column="user_type" property="userType" jdbcType="INTEGER" />
+	    <result column="issys" property="isSys" jdbcType="BOOLEAN" />
+	    <result column="lastLoginIp" property="lastLoginIp" jdbcType="VARCHAR" />
+	    <result column="lastLoginTime" property="lastLoginTime" jdbcType="TIMESTAMP" />
+  	</resultMap>
+  	<sql id="Base_Column_List" >
+   		 id, job_no, account,org_id, user_name, gender,email,cell_phone,address,user_type,
+   		 issys,lastLoginIp,lastLoginTime
+  	</sql>
+	
+	<select id="get" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+     	SELECT <include refid="Base_Column_List" />
+     	FROM sys_user_local_info a
+     	WHERE id = #{id}
+    </select>
+    
+	<insert id="save" parameterType="UserLocalInfo" statementType="PREPARED">
+		INSERT INTO sys_user_local_info(
+			id, job_no, account,org_id, user_name, gender,email,cell_phone,address,user_type,
+   		 	issys,lastLoginIp,lastLoginTime
+		) 
+		VALUES (
+			#{id},
+			#{jobNo},
+			#{account},
+			#{orgId},
+			#{userName},
+			#{gender},
+			#{email},
+			#{cellPhone},
+			#{address},
+			#{userType},
+			#{isSys},
+			#{lastLoginIp},
+			#{lastLoginTime}
+		)
+	</insert>
+
+    <update id="update" parameterType="UserLocalInfo" statementType="PREPARED">
+		UPDATE sys_user_local_info a SET
+			a.job_no =#{jobNo},
+			a.account =#{account},
+			a.org_id =#{orgId},
+			a.user_name =#{userName},
+			a.gender =#{gender},
+			a.email =#{email},
+			a.cell_phone =#{cellPhone},
+			a.address =#{address},
+			a.user_type =#{userType},
+			a.issys =#{isSys},
+			a.lastLoginIp =#{lastLoginIp},
+			a.lastLoginTime =#{lastLoginTime}
+		WHERE a.id = #{id}
+	</update>
+	
+	<select id="findPaginationByAccount" parameterType="map" resultMap="BaseResultMap">   
+		SELECT
+		<include refid="Base_Column_List" />
+     	FROM sys_user_local_info a
+     	WHERE 1 = 1
+     	<if test="account != null and account != '' ">
+			AND a.account like CONCAT('%',#{account},'%')
+		</if>
+     	ORDER BY a.createTime DESC 
+	</select>
+	
+	<select id="findPaginationByName" parameterType="Map" resultMap="BaseResultMap">   
+		SELECT 
+		<include refid="Base_Column_List" />
+     	FROM sys_user_local_info a 
+     	WHERE 1 = 1
+     	<if test="name != null and name != '' ">
+			AND (
+				a.user_name like CONCAT('%',#{name},'%') 
+				or a.job_no like CONCAT('%',#{name},'%') 
+				or a.account like CONCAT('%',#{name},'%') 
+			)
+		</if>
+		<if test="sort !=null and sort !='' and order != null and order != ''">
+			<if test="sort == 'jobNo' and order=='desc'"> ORDER BY a.job_no*1 DESC</if>
+			<if test="sort == 'jobNo' and order=='asc'"> ORDER BY a.job_no*1 asc</if>
+			<if test="sort == 'account' and order=='desc'"> ORDER BY a.account DESC</if>
+			<if test="sort == 'account' and order=='asc'"> ORDER BY a.account asc</if>
+			<if test="sort == 'userName' and order=='desc'"> ORDER BY a.user_name DESC</if>
+			<if test="sort == 'userName' and order=='asc'"> ORDER BY a.user_name asc</if>
+			<if test="sort == 'gender' and order=='desc'"> ORDER BY a.gender DESC</if>
+			<if test="sort == 'gender' and order=='asc'"> ORDER BY a.gender asc</if>
+			<if test="sort == 'lastLoginTime' and order=='desc'"> ORDER BY a.lastLoginTime DESC</if>
+			<if test="sort == 'lastLoginTime' and order=='asc'"> ORDER BY a.lastLoginTime asc</if>
+		</if>
+	</select>
+	
+	<select id="findByAccount" parameterType="map" resultMap="BaseResultMap">   
+		SELECT <include refid="Base_Column_List" />
+     	FROM sys_user_local_info a
+     	WHERE 1 = 1
+     	<if test="account != null and account != '' ">
+			AND a.account = #{account} 
+		</if>
+	</select>
+	
+	<select id="findByJobNo" parameterType="map" resultMap="BaseResultMap">   
+		SELECT <include refid="Base_Column_List" />
+     	FROM sys_user_local_info a
+     	WHERE 1 = 1
+     	<if test="jobNo != null and jobNo != '' ">
+			AND a.job_no = #{jobNo} 
+		</if>
+	</select>
+</mapper>

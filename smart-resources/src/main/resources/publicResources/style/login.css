@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+
+body,html {
+	margin: 0;
+	padding: 0;
+	text-align:center;
+	background: url(./images/login/background.png) repeat-x rgb(241, 241, 241);
+	font-family: Georgia, Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+
+.brand {
+	float: right;
+	margin-top: 30px;
+	margin-right: 50px;
+	height: 19px;
+	width: 95px;
+	background: url(./images/login/beone.png);
+}
+
+.stars {
+	vertical-align:middle;
+	margin:0 auto;
+	height: 228px;
+	width: 1200px;
+	background: url(./images/login/stars.png);
+}
+
+#title {
+	text-align: center;
+	height: 50px;
+	line-height: 55px;
+	color: white;
+	font-size: 18px;
+}
+
+.login-background {
+	vertical-align:middle;
+	margin:0 auto;
+	height: 321px;
+	width: 434px;
+	background: url(./images/login/login-background2.png);
+}
+
+.input-box{
+	position:absolute;
+	width: 294px;
+	height: 34px;
+	margin-left: 70px;
+	vertical-align:middle;
+	background: url(./images/login/input-box.png);
+}
+
+.loginname-box{
+	margin-top: 80px;
+}
+
+.password-box{
+	margin-top: 150px;
+}
+
+.verifycode-box{
+	margin-top: 150px;
+}
+
+.message-box{
+	position:absolute;
+	width: 294px;
+	height: 34px;
+	margin-left: 70px;
+	vertical-align:middle;
+	margin-top: 200px;
+	font-weight:bold;
+	font-size:20;
+	color:red;
+}
+
+.usertype-box{
+	position:absolute;
+	width: 294px;
+	height: 34px;
+	margin-left: 70px;
+	vertical-align:middle;
+	margin-top: 210px;
+	color:white;
+}
+
+.loginbtn-box{
+	position: absolute;
+	width: 156px;
+	cursor:pointer;
+	height: 34px;
+	margin-left: 150px;
+	vertical-align: middle;
+	margin-top: 240px;
+	background: url(./images/login/loginbtn.png) no-repeat;
+}
+
+.loginbtn-box:hover{
+	background: url(./images/login/loginbtn-check.png) no-repeat;
+}
+
+.input-label{
+	float:left;
+	font-size:14;
+	color:white;
+	font-weight:bold;
+	width: 60px;
+	height: 30px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.input-field{
+	margin-top: 2px;
+	text-align:left;
+	margin-left: 70px;
+	height: 30px;
+}
+
+
+
+.verify-input {
+	width: 70px;
+	position: absolute;
+	right: 87px;
+	bottom: 10px;
+	height: 20px;
+	text-align: center;
+}
+
+.verify-img {
+	width: 70px;
+	height: 26px;
+	position: absolute;
+	right: 160px;
+	bottom: 10px;
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fengmianyu.smart.sso.server.dao.RoleDao">
+	<select id="get" parameterType="java.lang.Integer" resultType="Role">
+     	SELECT * 
+     	FROM SYS_ROLE a
+     	WHERE id = #{id}
+    </select>
+	<insert id="save" parameterType="Role" statementType="PREPARED" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO SYS_ROLE(
+			appId,
+			name,
+			sort,
+			description,
+			isEnable,
+			create_timestamp,
+			create_user_id,
+			last_change_timestamp,
+			change_user_id,
+			issys
+		) 
+		VALUES (
+			#{appId},
+			#{name},
+			#{sort},
+			#{description},
+			#{isEnable},
+			#{create_timestamp},
+			#{create_user_id},
+			#{last_change_timestamp},
+			#{change_user_id},
+			#{issys}
+		)
+	</insert>
+	
+    <update id="update" parameterType="Role" statementType="PREPARED">
+		UPDATE SYS_ROLE a SET
+			a.`appId` = #{appId},
+			a.`name` = #{name},
+			a.`sort` = #{sort},
+			a.`description` = #{description},
+			a.isEnable = #{isEnable},
+			a.create_timestamp=#{create_timestamp},
+			a.create_user_id=#{create_user_id},
+			a.last_change_timestamp = #{last_change_timestamp},
+			a.change_user_id = #{change_user_id},
+			a.issys = #{issys}
+		WHERE a.`id` = #{id}
+	</update>
+	
+	<update id="enable" parameterType="map" statementType="PREPARED">
+		UPDATE SYS_ROLE a SET
+			a.isEnable = #{isEnable}
+		WHERE 1 = 1
+		<if test="idList != null">
+			AND a.`id` in <foreach collection="idList" item="item" open="(" separator="," close=")">#{item}</foreach>
+		</if>
+	</update>
+	
+	<select id="findRoleAndAppNameById" parameterType="java.lang.Integer" resultType="Role">
+		select a.* ,b.name as appName from sys_role a inner join sys_app b
+		on a.appId = b.id 
+		where a.id = #{id}
+	</select>
+	
+	<select id="findPaginationByName" parameterType="map" resultType="Role">   
+		SELECT * 
+     	FROM SYS_ROLE a
+     	WHERE 1 = 1
+     	<if test="name != null and name != '' ">
+			AND a.name like CONCAT('%',#{name},'%')
+		</if>
+		<if test="isEnable != null">
+			AND a.isEnable = #{isEnable} 
+		</if>
+		<if test="appId != null and appId != '' ">
+			AND a.appId = #{appId} 
+		</if>
+     	ORDER BY a.sort DESC 
+	</select>
+	<select id="findAllPagination" parameterType="map" resultType="Role">   
+		SELECT a.* , b.name as appName
+     	FROM SYS_ROLE a inner Join SYS_APP b
+     	on a.appId = b.id
+     	WHERE 1 = 1
+     	<if test="name != null and name != '' ">
+			AND a.name like CONCAT('%',#{name},'%')
+		</if>
+		<if test="isEnable != null">
+			AND a.isEnable = #{isEnable} 
+		</if>
+		<if test="appId != null and appId != '' ">
+			AND a.appId = #{appId}
+		</if>
+     	<if test="sort !=null and sort !='' and order != null and order != ''">
+			<if test="sort == 'name' and order=='desc'"> ORDER BY a.name DESC</if>
+			<if test="sort == 'name' and order=='asc'"> ORDER BY a.name asc</if>
+			<if test="sort == 'appName' and order=='desc'"> ORDER BY b.name DESC</if>
+			<if test="sort == 'appName' and order=='asc'"> ORDER BY b.name asc</if>
+			<if test="sort == 'sort' and order=='desc'"> ORDER BY a.sort DESC</if>
+			<if test="sort == 'sort' and order=='asc'"> ORDER BY a.sort asc</if>
+			<if test="sort == 'create_timestamp' and order=='desc'"> ORDER BY a.create_timestamp DESC</if>
+			<if test="sort == 'create_timestamp' and order=='asc'"> ORDER BY a.create_timestamp asc</if>
+			<if test="sort == 'last_change_timestamp' and order=='desc'"> ORDER BY a.last_change_timestamp DESC</if>
+			<if test="sort == 'last_change_timestamp' and order=='asc'"> ORDER BY a.last_change_timestamp asc</if>
+		</if>
+	</select>
+	<select id="findIssysByIds" parameterType="java.lang.Integer" resultType="String">
+		select issys from sys_role
+		where id in <foreach collection="idList" item="item" open="(" separator="," close=")">#{item}</foreach>
+	</select>
+	
+	<delete id="deleteById" parameterType="list" statementType="PREPARED">
+		DELETE FROM SYS_ROLE
+		WHERE 1 = 1
+		<if test="list != null">
+			AND `id` in <foreach collection="list" item="item" open="(" separator="," close=")">#{item}</foreach>
+		</if>
+	</delete>
+	
+	<delete id="deleteByAppIds" parameterType="map" statementType="PREPARED">
+		DELETE FROM SYS_ROLE
+		WHERE 1 = 1
+		<if test="idList != null">
+			AND appId in <foreach collection="idList" item="item" open="(" separator="," close=")">#{item}</foreach>
+		</if>
+	</delete>
+</mapper>

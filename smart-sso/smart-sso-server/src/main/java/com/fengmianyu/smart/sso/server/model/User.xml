@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fengmianyu.smart.sso.server.dao.UserDao">
+	<resultMap id="BaseResultMap" type="com.fengmianyu.smart.sso.server.model.User" >
+	    <id column="id" property="id" jdbcType="VARCHAR" />
+	    <result column="job_no" property="jobNo" jdbcType="VARCHAR" />
+	    <result column="account" property="account" jdbcType="VARCHAR" />
+	    <result column="password" property="password" jdbcType="VARCHAR" />
+	    <result column="org_id" property="orgId" jdbcType="INTEGER" />
+	    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+	    <result column="gender" property="gender" jdbcType="INTEGER" />
+	    <result column="email" property="email" jdbcType="VARCHAR" />
+	    <result column="cell_phone" property="cellPhone" jdbcType="VARCHAR" />
+	    <result column="address" property="address" jdbcType="VARCHAR" />
+	    <result column="user_type" property="userType" jdbcType="INTEGER" />
+	    <result column="issys" property="isSys" jdbcType="BOOLEAN" />
+	    <result column="lastLoginIp" property="lastLoginIp" jdbcType="VARCHAR" />
+	    <result column="loginCount" property="loginCount" jdbcType="INTEGER" />
+	    <result column="lastLoginTime" property="lastLoginTime" jdbcType="TIMESTAMP" />
+	    <result column="isEnable" property="isEnable" jdbcType="BOOLEAN" />
+	    <result column="create_timestamp" property="createTimestamp" jdbcType="TIMESTAMP" />
+	    <result column="last_change_timestamp" property="lastChangeTimestamp" jdbcType="TIMESTAMP" />
+	    <result column="create_user_id" property="createUserId" jdbcType="INTEGER" />
+	    <result column="change_user_id" property="changeUserId" jdbcType="INTEGER" />
+  	</resultMap>
+  	<sql id="Base_Column_List" >
+   		 id, job_no, account,password,org_id, user_name, gender,email,cell_phone,address,user_type,
+   		 issys,lastLoginIp,loginCount,lastLoginTime,isEnable,create_timestamp,last_change_timestamp,create_user_id,change_user_id
+  	</sql>
+	
+	<select id="get" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+     	SELECT <include refid="Base_Column_List" />
+     	FROM SYS_USER a
+     	WHERE id = #{id}
+    </select>
+    
+	<insert id="save" parameterType="com.fengmianyu.smart.sso.server.model.User" statementType="PREPARED" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO SYS_USER(
+			 job_no, account,password,org_id, user_name, gender,email,cell_phone,address,user_type,
+   		 	issys,lastLoginIp,loginCount,lastLoginTime,isEnable,create_timestamp,last_change_timestamp,create_user_id,change_user_id
+		) 
+		VALUES (
+			#{jobNo},
+			#{account},
+			#{password},
+			#{orgId},
+			#{userName},
+			#{gender},
+			#{email},
+			#{cellPhone},
+			#{address},
+			#{userType},
+			#{isSys},
+			#{lastLoginIp},
+			#{loginCount},
+			#{lastLoginTime},
+			#{isEnable},
+			#{createTimestamp},
+			#{lastChangeTimestamp},
+			#{createUserId},
+			#{changeUserId}
+		)
+	</insert>
+
+    <update id="update" parameterType="User" statementType="PREPARED">
+		UPDATE SYS_USER a SET
+			a.`job_no` =#{jobNo},
+			a.`account` =#{account},
+			a.`password` =#{password},
+			a.`org_id` =#{orgId},
+			a.`user_name` =#{userName},
+			a.`gender` =#{gender},
+			a.`email` =#{email},
+			a.`cell_phone` =#{cellPhone},
+			a.`address` =#{address},
+			a.`user_type` =#{userType},
+			a.`issys` =#{isSys},
+			a.`lastLoginIp` =#{lastLoginIp},
+			a.`loginCount` =#{loginCount},
+			a.`lastLoginTime` =#{lastLoginTime},
+			a.`isEnable` =#{isEnable},
+			a.`create_timestamp` =#{createTimestamp},
+			a.`last_change_timestamp` =#{lastChangeTimestamp},
+			a.`create_user_id` =#{createUserId},
+			a.`change_user_id` =#{changeUserId}
+		WHERE a.`id` = #{id}
+	</update>
+	
+	<update id="enable" parameterType="map" statementType="PREPARED">
+		UPDATE SYS_USER a SET
+			a.isEnable = #{isEnable}
+		WHERE 1 = 1
+		<if test="idList != null">
+			AND a.`id` in <foreach collection="idList" item="item" open="(" separator="," close=")">#{item}</foreach>
+		</if>
+	</update>
+	
+	<update id="resetPassword" parameterType="map" statementType="PREPARED">
+		UPDATE SYS_USER a SET
+			a.password = #{password}
+		WHERE 1 = 1
+		<if test="idList != null">
+			AND a.`id` in <foreach collection="idList" item="item" open="(" separator="," close=")">#{item}</foreach>
+		</if>
+	</update>
+	
+	<select id="findPaginationByAccount" parameterType="map" resultMap="BaseResultMap">   
+		SELECT * 
+     	FROM SYS_USER a
+     	WHERE 1 = 1
+     	<if test="account != null and account != '' ">
+			AND a.account like CONCAT('%',#{account},'%')
+		</if>
+		<if test="appId != null and appId != '' ">
+			AND EXISTS (SELECT 1
+		                  FROM SYS_RE_USER_APP ua
+		                 WHERE ua.userId = a.id
+		                   AND ua.appId = #{appId})
+		</if>
+	</select>
+	
+	<select id="findPaginationByName" parameterType="Map" resultMap="BaseResultMap">   
+		SELECT 
+		<include refid="Base_Column_List" />
+     	FROM SYS_USER a 
+     	WHERE 1 = 1
+     	<if test="name != null and name != '' ">
+			AND (
+				a.user_name like CONCAT('%',#{name},'%') 
+				or a.job_no like CONCAT('%',#{name},'%') 
+				or a.account like CONCAT('%',#{name},'%') 
+			)
+		</if>
+		<if test="appId != null and appId != '' ">
+			AND EXISTS (
+				SELECT 1
+				FROM SYS_RE_USER_APP ref
+				WHERE ref.userId = a.id
+				 AND ref.appId = #{appId})
+		</if>
+		<if test="sort !=null and sort !='' and order != null and order != ''">
+			<if test="sort == 'jobNo' and order=='desc'"> ORDER BY a.job_no*1 DESC</if>
+			<if test="sort == 'jobNo' and order=='asc'"> ORDER BY a.job_no*1 asc</if>
+			<if test="sort == 'account' and order=='desc'"> ORDER BY a.account DESC</if>
+			<if test="sort == 'account' and order=='asc'"> ORDER BY a.account asc</if>
+			<if test="sort == 'userName' and order=='desc'"> ORDER BY a.user_name DESC</if>
+			<if test="sort == 'userName' and order=='asc'"> ORDER BY a.user_name asc</if>
+			<if test="sort == 'gender' and order=='desc'"> ORDER BY a.gender DESC</if>
+			<if test="sort == 'gender' and order=='asc'"> ORDER BY a.gender asc</if>
+			<if test="sort == 'lastLoginTime' and order=='desc'"> ORDER BY a.lastLoginTime DESC</if>
+			<if test="sort == 'lastLoginTime' and order=='asc'"> ORDER BY a.lastLoginTime asc</if>
+		</if>
+	</select>
+	
+	<select id="findByAccount" parameterType="map" resultMap="BaseResultMap">   
+		SELECT <include refid="Base_Column_List" />
+     	FROM SYS_USER a
+     	WHERE 1 = 1
+     	<if test="account != null and account != '' ">
+			AND a.account = #{account} 
+		</if>
+	</select>
+	
+	<delete id="deleteById" parameterType="list" statementType="PREPARED">
+		DELETE FROM SYS_USER
+		WHERE 1 = 1
+		<if test="list != null">
+			AND `id` in <foreach collection="list" item="item" open="(" separator="," close=")">#{item}</foreach>
+		</if>
+	</delete>
+	
+	<select id="findByJobNo" parameterType="map" resultMap="BaseResultMap">   
+		SELECT <include refid="Base_Column_List" />
+     	FROM SYS_USER a
+     	WHERE 1 = 1
+     	<if test="jobNo != null and jobNo != '' ">
+			AND a.job_no = #{jobNo} 
+		</if>
+	</select>
+</mapper>

@@ -1,0 +1,40 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+  <title>LiveValidation  - Examples</title>
+  <link rel="stylesheet" type="text/css" href="css/consolidated_common.css" />
+  <script type="text/javascript" src="../jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="livevalidation.js"></script>
+  <script type="text/javascript">
+  $(function(){
+  
+  
+		var field1 = new LiveValidation( 'field1', {wait: 500 } );
+		field1.add( Validate.Email, {failureMessage: "请输入正确的Email地址"});
+		field1.add( Validate.Presence, {failureMessage: "不能为空哦!"});
+		
+		var field2 = new LiveValidation( 'field2', {onlyOnSubmit: true } );
+		field2.add( Validate.Acceptance, {failureMessage: "必须选中！"});
+		
+		var field3 = new LiveValidation( 'field3', {onlyOnSubmit: true } );
+		field3.add( Validate.Presence, {failureMessage: "不能为空哦!"});
+  });
+  </script>
+</head>
+<body>
+<div id="doc">
+	验证整个表单的提交：
+	<form action="#" method="post">
+		<fieldset>
+			<p><label for="field1" class="displayBlock">Email (optional):</label><input type="text" id="field1" /></p>
+			<p><label for="field2" class="displayBlock">Acceptance (required):</label><input type="checkbox" id="field2" class="checkbox" maxlength=""/></p>
+			<p><label for="field3" class="displayBlock">Presence (required):</label><textarea  id="field3" class="shallow" rows="2" cols="10"></textarea></p>
+	    	<p><input type="submit" class="submit" value="Test me!" /></p>
+		</fieldset>
+	</form>
+</div>
+</body>
+</html>

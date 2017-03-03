@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>test_plupload.html</title>
+<style type="text/css">
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	color: #333;
+	background: url(../bg.jpg);
+}
+</style>
+<link rel="stylesheet" href="../../js/jquery.plupload.queue/css/jquery.plupload.queue.css" type="text/css" media="screen" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+
+<script type="text/javascript" src="../../js/plupload.full.js"></script>
+<script type="text/javascript" src="../../js/i18n/cn.js"></script>
+<script type="text/javascript" src="../../js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+</head>
+<body>
+	<form method="post" action="../dump.php">
+		<h1>test_plupload.html</h1>
+		<div id="uploader" style="width: 450px; height: 330px;">
+			<p>Your browser doesn't have Html5,Gears,BrowserPlus,SilverLight,Flash or Html4 support.</p>
+		</div>
+	</form>
+	<script type="text/javascript">
+		$(function() {
+			$("#uploader").pluploadQueue({
+				// 這裏是說用什麼技術引擎，由於國內瀏覽器問題這裏一般使用flash即可。其他的刪除掉。
+				runtimes : 'html5,gears,browserplus,silverlight,flash,html4',
+				url : '../upload.php',// 服務端上傳路徑
+				max_file_size : '10mb',// 文件上傳最大限制。
+				chunk_size : '1mb',// 上传分块每块的大小，这个值小于服务器最大上传限制的值即可。（文件總大小/chunk_size = 分塊數）。
+				rename : true,//上傳的文件名是否唯一
+
+				//這個數組是選擇器，就是上傳文件時限制的上傳文件類型
+				filters : [ {
+					title : "Image files",
+					extensions : "jpg,gif,png"
+				}, {
+					title : "Zip files",
+					extensions : "zip"
+				} ],
+
+				// 是否生成縮略圖（僅對圖片文件有效）
+				resize : {
+					width : 320,
+					height : 240,
+					quality : 90
+				},
+
+				// plupload.flash.swf 的所在路徑
+				flash_swf_url : '../../js/plupload.flash.swf',
+				// silverlight所在路徑
+				silverlight_xap_url : '../../js/plupload.silverlight.xap'
+			});
+
+			$('form').submit(function(e) {
+				var uploader = $('#uploader').plupload('getUploader');// 取得上傳隊列
+				if (uploader.files.length > 0) {// 就是說如果上傳隊列中還有文件
+					uploader.bind('StateChanged',function() {//当所有文件都上传提交表单
+						if (uploader.files.length === (uploader.total.uploaded + uploader.total.failed)) {
+							$('form')[0].submit();
+						}
+					});
+					uploader.start();
+				} else
+					alert('请先上传数据文件！');
+				return false;
+			});
+
+		});
+	</script>
+
+</body>
+</html>

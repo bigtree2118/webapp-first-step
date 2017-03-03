@@ -1,0 +1,552 @@
+BODY {
+	LINE-HEIGHT: 18px; FONT-FAMILY: arial, helvetica, sans-serif; COLOR: #666666; FONT-SIZE: 13px
+}
+H1 {
+	MARGIN-BOTTOM: 20px; LETTER-SPACING: -2px; FONT-SIZE: 200%
+}
+H2 {
+	MARGIN-BOTTOM: 20px; LETTER-SPACING: -1px; FONT-SIZE: 180%
+}
+H3 {
+	MARGIN-BOTTOM: 20px; LETTER-SPACING: -1px; FONT-SIZE: 150%
+}
+H4 {
+	MARGIN-BOTTOM: 20px; LETTER-SPACING: -1px; FONT-SIZE: 120%; FONT-WEIGHT: bold
+}
+A {
+	BORDER-BOTTOM: #b9d420 1px dotted; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #b9d420; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #b9d420
+}
+A:hover {
+	BORDER-BOTTOM: 1px solid; COLOR: #009900
+}
+STRONG {
+	FONT-WEIGHT: bold
+}
+EM {
+	FONT-STYLE: italic
+}
+P {
+	PADDING-BOTTOM: 0.5em; MARGIN: 0.5em 0px
+}
+BLOCKQUOTE {
+	TEXT-INDENT: 37px; BACKGROUND: url(../images/generic/blockquote.png) no-repeat left top; COLOR: #888888
+}
+CITE {
+	FONT-WEIGHT: bold
+}
+PRE {
+	BORDER-BOTTOM: #e3e3e3 1px solid; BORDER-LEFT: #e3e3e3 1px solid; PADDING-BOTTOM: 2%; LINE-HEIGHT: 140%; BACKGROUND-COLOR: #f7f7f7; MARGIN: 0px; PADDING-LEFT: 2%; PADDING-RIGHT: 2%; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; FONT-SIZE: 11px; BORDER-TOP: #e3e3e3 1px solid; BORDER-RIGHT: #e3e3e3 1px solid; PADDING-TOP: 2%
+}
+CODE {
+	LINE-HEIGHT: normal; FONT-VARIANT: normal; FONT-STYLE: normal; FONT-FAMILY: monaco, "lucida console", "courier new", courier, serif; FONT-WEIGHT: normal; font-size-adjust: none; font-stretch: normal
+}
+LABEL {
+	FONT-WEIGHT: bold
+}
+INPUT {
+	WIDTH: 100px
+}
+SELECT {
+	WIDTH: 100px
+}
+INPUT {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; PADDING-BOTTOM: 2px; MARGIN-TOP: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: url(../images/generic/inputBg.gif) #ffffff no-repeat left top; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 2px
+}
+TEXTAREA {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; PADDING-BOTTOM: 2px; MARGIN-TOP: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: url(../images/generic/inputBg.gif) #ffffff no-repeat left top; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 2px
+}
+SELECT {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; PADDING-BOTTOM: 2px; MARGIN-TOP: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: url(../images/generic/inputBg.gif) #ffffff no-repeat left top; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 2px
+}
+INPUT.checkbox {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 15px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+INPUT.radio_button {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 15px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+INPUT.small {
+	WIDTH: 50px
+}
+SELECT.small {
+	WIDTH: 50px
+}
+INPUT.large {
+	WIDTH: 200px
+}
+SELECT.large {
+	WIDTH: 200px
+}
+INPUT.extra_large {
+	WIDTH: 300px
+}
+SELECT.extra_large {
+	WIDTH: 300px
+}
+INPUT:hover {
+	BORDER-BOTTOM: #888888 1px solid; BORDER-LEFT: #888888 1px solid; BORDER-TOP: #888888 1px solid; BORDER-RIGHT: #888888 1px solid
+}
+TEXTAREA:hover {
+	BORDER-BOTTOM: #888888 1px solid; BORDER-LEFT: #888888 1px solid; BORDER-TOP: #888888 1px solid; BORDER-RIGHT: #888888 1px solid
+}
+SELECT:hover {
+	BORDER-BOTTOM: #888888 1px solid; BORDER-LEFT: #888888 1px solid; BORDER-TOP: #888888 1px solid; BORDER-RIGHT: #888888 1px solid
+}
+INPUT:active {
+	BORDER-BOTTOM: #888888 1px solid; BORDER-LEFT: #888888 1px solid; BORDER-TOP: #888888 1px solid; BORDER-RIGHT: #888888 1px solid
+}
+TEXTAREA:active {
+	BORDER-BOTTOM: #888888 1px solid; BORDER-LEFT: #888888 1px solid; BORDER-TOP: #888888 1px solid; BORDER-RIGHT: #888888 1px solid
+}
+SELECT:active {
+	BORDER-BOTTOM: #888888 1px solid; BORDER-LEFT: #888888 1px solid; BORDER-TOP: #888888 1px solid; BORDER-RIGHT: #888888 1px solid
+}
+INPUT.submit {
+	BACKGROUND: url(../images/generic/submitBg.png) #ffffff no-repeat -20px 0px; COLOR: #ffffff
+}
+INPUT.submit:hover {
+	CURSOR: pointer
+}
+TEXTAREA {
+	WIDTH: 300px; HEIGHT: 200px
+}
+TEXTAREA.deep {
+	HEIGHT: 350px
+}
+TEXTAREA.shallow {
+	HEIGHT: 50px
+}
+FIELDSET {
+	BORDER-BOTTOM: #e3e3e3 1px solid; BORDER-LEFT: #e3e3e3 1px solid; PADDING-BOTTOM: 2%; MARGIN: 0px; PADDING-LEFT: 2%; PADDING-RIGHT: 2%; BACKGROUND: #f7f7f7; BORDER-TOP: #e3e3e3 1px solid; BORDER-RIGHT: #e3e3e3 1px solid; PADDING-TOP: 2%
+}
+LEGEND {
+	LETTER-SPACING: -1px; COLOR: #666666; FONT-SIZE: 120%; FONT-WEIGHT: bold
+}
+IMG {
+	BORDER-BOTTOM: #cccccc 2px solid; BORDER-LEFT: #cccccc 2px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #eeeeee; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 2px solid; BORDER-RIGHT: #cccccc 2px solid; PADDING-TOP: 2px
+}
+TABLE {
+	BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid
+}
+THEAD {
+	BORDER-BOTTOM: #999999 1px solid; BACKGROUND: url(../images/generic/theadBg.jpg) #999999 repeat-x left top; COLOR: #ffffff
+}
+TR.odd {
+	BACKGROUND-COLOR: #eeeeee
+}
+TH {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 3px
+}
+TD {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 3px
+}
+OL LI {
+	LIST-STYLE-TYPE: decimal
+}
+UL LI {
+	LIST-STYLE-TYPE: disc
+}
+OL {
+	PADDING-LEFT: 30px
+}
+UL {
+	PADDING-LEFT: 30px
+}
+DL {
+	PADDING-LEFT: 30px
+}
+DD {
+	PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #eeeeee; MARGIN: 0px 0px 4px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.LV_valid {
+	COLOR: #00cc00
+}
+.LV_invalid {
+	COLOR: #cc0000
+}
+.LV_validation_message {
+	MARGIN: 0px 0px 0px 5px; FONT-WEIGHT: bold
+}
+.LV_valid_field {
+	BORDER-BOTTOM: #00cc00 1px solid; BORDER-LEFT: #00cc00 1px solid; BORDER-TOP: #00cc00 1px solid; BORDER-RIGHT: #00cc00 1px solid
+}
+INPUT.LV_valid_field:hover {
+	BORDER-BOTTOM: #00cc00 1px solid; BORDER-LEFT: #00cc00 1px solid; BORDER-TOP: #00cc00 1px solid; BORDER-RIGHT: #00cc00 1px solid
+}
+INPUT.LV_valid_field:active {
+	BORDER-BOTTOM: #00cc00 1px solid; BORDER-LEFT: #00cc00 1px solid; BORDER-TOP: #00cc00 1px solid; BORDER-RIGHT: #00cc00 1px solid
+}
+TEXTAREA.LV_valid_field:hover {
+	BORDER-BOTTOM: #00cc00 1px solid; BORDER-LEFT: #00cc00 1px solid; BORDER-TOP: #00cc00 1px solid; BORDER-RIGHT: #00cc00 1px solid
+}
+TEXTAREA.LV_valid_field:active {
+	BORDER-BOTTOM: #00cc00 1px solid; BORDER-LEFT: #00cc00 1px solid; BORDER-TOP: #00cc00 1px solid; BORDER-RIGHT: #00cc00 1px solid
+}
+.fieldWithErrors INPUT.LV_valid_field {
+	BORDER-BOTTOM: #00cc00 1px solid; BORDER-LEFT: #00cc00 1px solid; BORDER-TOP: #00cc00 1px solid; BORDER-RIGHT: #00cc00 1px solid
+}
+.fieldWithErrors TEXTAREA.LV_valid_field {
+	BORDER-BOTTOM: #00cc00 1px solid; BORDER-LEFT: #00cc00 1px solid; BORDER-TOP: #00cc00 1px solid; BORDER-RIGHT: #00cc00 1px solid
+}
+.LV_invalid_field {
+	BORDER-BOTTOM: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-RIGHT: #cc0000 1px solid
+}
+INPUT.LV_invalid_field:hover {
+	BORDER-BOTTOM: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-RIGHT: #cc0000 1px solid
+}
+INPUT.LV_invalid_field:active {
+	BORDER-BOTTOM: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-RIGHT: #cc0000 1px solid
+}
+TEXTAREA.LV_invalid_field:hover {
+	BORDER-BOTTOM: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-RIGHT: #cc0000 1px solid
+}
+TEXTAREA.LV_invalid_field:active {
+	BORDER-BOTTOM: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-RIGHT: #cc0000 1px solid
+}
+.fieldWithErrors INPUT.LV_invalid_field {
+	BORDER-BOTTOM: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-RIGHT: #cc0000 1px solid
+}
+.fieldWithErrors TEXTAREA.LV_invalid_field {
+	BORDER-BOTTOM: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-RIGHT: #cc0000 1px solid
+}
+.floatRight {
+	FLOAT: right
+}
+.floatLeft {
+	FLOAT: left
+}
+.clearBoth {
+	CLEAR: both
+}
+.clearLeft {
+	CLEAR: left
+}
+.clearRight {
+	CLEAR: right
+}
+.inline {
+	DISPLAY: inline
+}
+.block {
+	DISPLAY: block
+}
+.hidden {
+	DISPLAY: none
+}
+.invisible {
+	VISIBILITY: hidden
+}
+.visible {
+	VISIBILITY: visible
+}
+.marginTop10 {
+	MARGIN-TOP: 10px
+}
+.marginRight10 {
+	MARGIN-RIGHT: 10px
+}
+.marginBottom10 {
+	MARGIN-BOTTOM: 10px
+}
+.marginleft10 {
+	MARGIN-LEFT: 10px
+}
+BODY {
+	BACKGROUND-COLOR: #999999; BORDER-TOP: #999999 7px solid
+}
+#bg {
+	BACKGROUND-COLOR: #f9f9f9; PADDING-TOP: 20px
+}
+#doc {
+	BACKGROUND-COLOR: transparent
+}
+#hd {
+	BACKGROUND-COLOR: transparent
+}
+#ft {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #cccccc; PADDING-TOP: 10px
+}
+#head_nav {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 0px; MARGIN: 0px 10px 0px 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#head_nav LI {
+	LIST-STYLE-TYPE: none; MARGIN: 0px 0px 0px 1px; FLOAT: right; LIST-STYLE-IMAGE: none
+}
+#head_nav A {
+	BORDER-BOTTOM: 0px; TEXT-ALIGN: center; BORDER-LEFT: 0px; PADDING-BOTTOM: 0.5em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; DISPLAY: block; FONT-SIZE: 120%; VERTICAL-ALIGN: middle; BORDER-TOP: 0px; FONT-WEIGHT: bold; BORDER-RIGHT: 0px; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+#head_nav A:visited {
+	
+}
+#head_nav A:hover {
+	
+}
+#hd H1 A {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; TEXT-INDENT: -5000px; MARGIN: 0px 0px 10px; WIDTH: 272px; DISPLAY: block; BACKGROUND: url(../images/bgs/logo.gif) no-repeat left top; HEIGHT: 40px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+#hd H2 {
+	TEXT-INDENT: -5000px; MARGIN: 0px; WIDTH: 349px; BACKGROUND: url(../images/bgs/strapline.gif) no-repeat left top; HEIGHT: 39px
+}
+#topMain {
+	BACKGROUND: url(../images/bgs/topMainBg.gif) no-repeat left top; HEIGHT: 30px; CLEAR: both
+}
+#bottomMain {
+	BACKGROUND: url(../images/bgs/bottomMainBg.gif) no-repeat left top; HEIGHT: 30px
+}
+#main {
+	MARGIN: 0px; BACKGROUND: url(../images/bgs/mainBg.gif) repeat-y left top
+}
+.container_with_padding {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 30px; PADDING-RIGHT: 30px; PADDING-TOP: 0px
+}
+#main LI {
+	PADDING-BOTTOM: 2px; MARGIN: 0px auto; PADDING-LEFT: 2px; WIDTH: 620px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+LI.odd {
+	BACKGROUND: #ffe2c4
+}
+.crumbs {
+	MARGIN: 0px 0px 20px
+}
+CITE {
+	COLOR: #ff9422
+}
+.last {
+	MARGIN-BOTTOM: 0px
+}
+.vote_button {
+	WIDTH: inherit
+}
+INPUT {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+SELECT {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+INPUT.radio_button {
+	MARGIN-LEFT: 50px
+}
+INPUT.submit {
+	BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: 0px; WIDTH: inherit; BACKGROUND: #cccccc; BORDER-TOP: 0px; BORDER-RIGHT: #999999 1px solid
+}
+TEXTAREA {
+	WIDTH: 400px
+}
+TEXTAREA.shallow {
+	HEIGHT: 100px
+}
+#foot_nav {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#foot_nav LI {
+	LIST-STYLE-TYPE: none; MARGIN: 0px 0.5em; DISPLAY: inline; LIST-STYLE-IMAGE: none
+}
+#tlaContainer {
+	MARGIN-BOTTOM: 10px
+}
+#tlaContainer A {
+	BORDER-BOTTOM: #ffffff 1px dotted; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; COLOR: #ffffff; TEXT-DECORATION: none
+}
+#tlaContainer A:visited {
+	COLOR: #ffffff
+}
+#tlaContainer A:hover {
+	BORDER-BOTTOM: 1px solid; COLOR: #ffffff
+}
+#megaFooter {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #999999; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; COLOR: #ffffff; PADDING-TOP: 10px
+}
+.pagination {
+	FLOAT: right
+}
+.pagination A {
+	BORDER-BOTTOM: #ffe2c4 1px solid; BORDER-LEFT: #ffe2c4 1px solid; COLOR: #ff9422; BORDER-TOP: #ffe2c4 1px solid; BORDER-RIGHT: #ffe2c4 1px solid
+}
+.pagination A:hover {
+	BORDER-BOTTOM: #ff9422 1px solid; BORDER-LEFT: #ff9422 1px solid; COLOR: #000; BORDER-TOP: #ff9422 1px solid; BORDER-RIGHT: #ff9422 1px solid
+}
+.pagination A:active {
+	BORDER-BOTTOM: #ff9422 1px solid; BORDER-LEFT: #ff9422 1px solid; COLOR: #000; BORDER-TOP: #ff9422 1px solid; BORDER-RIGHT: #ff9422 1px solid
+}
+.pagination SPAN.current {
+	BORDER-BOTTOM: #ff9422 1px solid; BORDER-LEFT: #ff9422 1px solid; BACKGROUND-COLOR: #ff9422; COLOR: #fff; BORDER-TOP: #ff9422 1px solid; BORDER-RIGHT: #ff9422 1px solid
+}
+.pagination SPAN.disabled {
+	
+}
+H1 {
+	COLOR: #b9d420
+}
+H2 {
+	COLOR: #b9d420
+}
+H3 {
+	COLOR: #b9d420
+}
+A {
+	BORDER-BOTTOM: #b9d420 1px dotted; COLOR: #b9d420
+}
+A:visited {
+	COLOR: #b9d420
+}
+A:hover {
+	BORDER-BOTTOM-COLOR: #009900; BORDER-TOP-COLOR: #009900; COLOR: #009900; BORDER-RIGHT-COLOR: #009900; BORDER-LEFT-COLOR: #009900
+}
+A.gotoTop {
+	MARGIN-TOP: 3px; FLOAT: right; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+INPUT.sayHello {
+	WIDTH: 100px
+}
+#main H4 {
+	MARGIN-BOTTOM: 10px
+}
+#documentation H2 {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND: #b9d420; COLOR: #666666; PADDING-TOP: 5px
+}
+#results H2 {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND: #b9d420; COLOR: #666666; PADDING-TOP: 5px
+}
+.section H3 {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BACKGROUND: #eeeeee; PADDING-TOP: 3px
+}
+#documentation H3 {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BACKGROUND: #eeeeee; PADDING-TOP: 3px
+}
+.section H4 {
+	BORDER-BOTTOM: #eeeeee 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; BORDER-TOP: #eeeeee 1px solid; PADDING-TOP: 3px
+}
+#documentation H4 {
+	BORDER-BOTTOM: #eeeeee 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; BORDER-TOP: #eeeeee 1px solid; PADDING-TOP: 3px
+}
+FORM LABEL {
+	DISPLAY: block
+}
+#hideForTests {
+	POSITION: absolute; VISIBILITY: hidden; TOP: -5000px; LEFT: -5000px
+}
+A.downloadButton {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; TEXT-INDENT: -5000px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 270px; PADDING-RIGHT: 0px; DISPLAY: block; BACKGROUND: url(../images/downloadButton.gif) no-repeat 0px 0px; HEIGHT: 48px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+A.downloadButton:hover {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-POSITION: 0px -60px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+OBJECT.adsense {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 728px; PADDING-RIGHT: 0px; HEIGHT: 90px; OVERFLOW: hidden; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+.date {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; WIDTH: 50px; PADDING-RIGHT: 0px; BACKGROUND: #b9d420; FLOAT: left; MARGIN-RIGHT: 10px; PADDING-TOP: 10px
+}
+.date STRONG {
+	DISPLAY: block; FONT-SIZE: 200%
+}
+.chatterBox {
+	WIDTH: 625px; MARGIN-BOTTOM: 20px; FLOAT: left
+}
+HR.divider {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 15px 0px 20px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+P.update {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; MARGIN-BOTTOM: 15px; BACKGROUND: #f9f9f9; BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 10px
+}
+#main .supportBox {
+	MARGIN: 0px 0px 20px 60px; WIDTH: 160px; FLOAT: left
+}
+#main .supportBox UL {
+	PADDING-BOTTOM: 0px; MARGIN-TOP: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#main .supportBox UL LI {
+	LIST-STYLE-TYPE: none; WIDTH: 160px; LIST-STYLE-IMAGE: none
+}
+#main .supportBox .versions {
+	DISPLAY: none
+}
+.firefox {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.ie6 {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.ie7 {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.safari {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.opera {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.camino {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.netscape {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.konqueror {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.chrome {
+	BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 2px
+}
+.firefox {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/firefox.gif)
+}
+.ie6 {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/ie.gif)
+}
+.ie7 {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/ie7.gif)
+}
+.safari {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/safari.gif)
+}
+.opera {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/opera.gif)
+}
+.camino {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/camino.gif)
+}
+.netscape {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/netscape.gif)
+}
+.konqueror {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/konqueror.gif)
+}
+.chrome {
+	BACKGROUND-IMAGE: url(../images/generic/browsers/chrome.gif)
+}
+#megaFooter INPUT.donate {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 62px; PADDING-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 31px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+#megaFooter IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+A#addThis IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV#addthis_dropdown15 IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+A#addThis {
+	MARGIN: 0px
+}
+DIV#addthis_dropdown15 A {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+A#addThis {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV#addthis_dropdown15 TABLE {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV#addthis_dropdown15 TR {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV#addthis_dropdown15 TH {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV#addthis_dropdown15 TD {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}

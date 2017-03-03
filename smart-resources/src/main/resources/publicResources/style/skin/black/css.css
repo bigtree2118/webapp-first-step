@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+body,html { margin: 0; padding: 0; font-size: 12px; font-family: Arial, 宋体, sans-serif; color:#FFFFFF;}
+
+/*--滚动条样式--*/
+*{ scrollbar-face-color: #ebebeb; scrollbar-shadow-color: #ffffff; scrollbar-highlight-color:#ffffff; scrollbar-3dlight-color: #d8d8d8; scrollbar-darkshadow-color: #d8d8d8; scrollbar-track-color:#ffffff; scrollbar-arrow-color: #686868; }
+
+font { color:#F00; }
+fieldset{ border: 1px solid #EFF0F1; padding:5px; margin:5px; }
+legend { font-weight:bold; border: 1px solid #EFF0F1; } 
+.label{ width: 60px; text-align:right; display: -moz-inline-box; display: inline-block; }
+
+.img-btn{ margin: 0 5px; padding: 2px 0 2px 16px; cursor:pointer; }
+.img-btn:hover{ border: 1px  #D4D4D4 solid; }
+
+.form-table{ background:#666666; margin:1px; }
+.form-table table{ width:100%; border:0; border-collapse:collapse; }
+.form-table table th{ background:#292929; font-weight:normal; text-align:right; padding:2px; white-space:nowrap; border:1px solid #000000; width:12%; }
+.form-table table td{ padding:2px; border:1px solid #000000; }
+/*--下拉框样式--*/
+.form-table select { width:155px; }
+/*--多行文本框样式--*/
+.form-table .multiple-line { width:90%; }
+
+/*--只读输入框样式--*/
+.readonly-input { background:#eee; color: #8F9090; border:1px solid #999; font-weight: bold; }
+
+.line-sep{ height:1px;border:none;border-top:1px solid #000000;}
+.button-group{ height: 28px; border-right: 1px solid #000000; float: left; margin-right: 5px; padding-right: 5px;}
+/*---------开始：表单元素图标样式（比如：点击选择、点击日期提示）------*/
+.chooseInput, .dateInput{ background: #fff url(./../../images/ico_11.gif) no-repeat right center; border:#7F9DB9 1px solid; height:18px; line-height:18px; }
+.searchInput{ background:#fff url(./../../images/icons/search.png) no-repeat right center; }
+.treeInput{ background:#fff url(./../../images/icons/choose_tree_node.gif) no-repeat right center; }
+.autoInput{ background:#fff url(./../../images/icons/choose_auto_item.gif) no-repeat right center; }
+/*---------结束：表单元素图标样式（比如：点击选择、点击日期提示）------*/
+
+.link-button{ border: 1px black; color: black; text-decoration: none; font-weight: bolder; }
+.numberbox{text-align:right;}
+
+/*---------开始：查询表单Table样式------*/
+.search-form-table {border:0px; margin:0px; padding:0px; border-collapse:collapse;}
+.search-form-table th{width: 60px; text-align: right; font-weight:normal;}
+.search-form-table .radio-border{border: 1px solid #A9A9A9; width: 135px; padding: 1px;}
+/*---------结束：查询表单Table样式------*/
